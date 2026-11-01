@@ -46,3 +46,5 @@ document.querySelector('#copy-plan').addEventListener('click',async()=>{
 });
 document.querySelector('#year').textContent=new Date().getFullYear();
 renderPlans();
+
+document.querySelectorAll('.compare-scroll a[href^="#facts-"]').forEach(link => link.addEventListener('click', () => { const disclosure = document.querySelector(link.getAttribute('href')); if(disclosure) disclosure.open = true; }));

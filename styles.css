@@ -190,3 +190,11 @@
 .plans-section .plan-disclaimer{font-size:14px;color:#59667d}
 @media(max-width:1050px){.plan-card,.plan-card.featured{flex-basis:calc((100% - 22px)/2)}}
 @media(max-width:720px){.plan-grid{gap:30px}.plan-card,.plan-card.featured{flex-basis:100%;max-width:480px;padding:28px 24px}.plan-grid .plan-card:last-child ul{display:block}.plan-tag{min-height:0}.plan-name{font-size:24px}.plan-tools{align-items:center;flex-wrap:wrap;gap:15px}.plan-tools>span{max-width:none;text-align:left}.segmented button{font-size:14px;padding:10px 14px}}
+
+/* Keep all five plans together without shrinking readable text. */
+.plans-section.wrap{max-width:1680px}
+.plan-grid{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:18px;overflow-x:auto;padding:28px 3px 18px;margin-top:-28px;scroll-snap-type:x proximity}
+.plan-card,.plan-card.featured{flex:1 0 260px;min-width:260px;padding:28px 20px 22px;scroll-snap-align:start}
+.plan-name{font-size:22px}.plan-tag{min-height:48px}
+.plan-grid .plan-card:last-child ul{display:block}
+@media(max-width:720px){.plan-grid{gap:16px}.plan-card,.plan-card.featured{flex:0 0 86%;min-width:270px;max-width:none;padding:28px 24px}.plan-tag{min-height:48px}}

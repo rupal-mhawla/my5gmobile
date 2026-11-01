@@ -243,3 +243,20 @@
 .coverage-map-watermark img{width:85%;height:auto;opacity:.18;transform:rotate(-12deg)}
 .coverage-map-stage .coverage-static-image{position:relative;z-index:1;mix-blend-mode:multiply;background:transparent;opacity:.9}
 .coverage-map-stage .coverage-static-image>img{mix-blend-mode:multiply}
+
+/* Wide coverage composition with branding in the open side area. */
+#coverage.wrap{max-width:1680px}
+.coverage-static-panel{border-radius:18px;border:1px solid #d8e6f2;box-shadow:0 16px 45px #0b63960b}
+.coverage-map-stage{display:grid;grid-template-columns:22% 78%;align-items:stretch;background:#adc6ed;min-height:0}
+.coverage-side-brand{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:32px 18px 32px 30px;position:relative;background:linear-gradient(140deg,#e1f8ffbb,#adc6ed00)}
+.coverage-side-brand img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.coverage-side-brand>span{font-family:Manrope,Arial,sans-serif;font-size:clamp(16px,1.8vw,26px);font-weight:800;letter-spacing:-.7px;color:#183c68;line-height:1.4;margin-top:20px}
+.coverage-side-rule{width:48px;height:4px;border-radius:4px;background:linear-gradient(90deg,#00b7df,#087fcb,#bd0089);margin:22px 0 15px}
+.coverage-side-brand>small{font-size:10px;letter-spacing:2px;color:#385778;font-weight:700}
+.coverage-map-stage .coverage-static-image{width:100%;aspect-ratio:710/340;mix-blend-mode:normal;opacity:1;border-radius:0;background:#adc6ed}
+.coverage-map-stage .coverage-static-image>img{mix-blend-mode:normal}
+.coverage-static-panel .coverage-static-legend{background:#f5faff;gap:20px 30px;border-top:3px solid transparent;border-image:linear-gradient(90deg,#00b7df,#087fcb,#bd0089) 1}
+.coverage-static-legend .domestic-swatch{background:#056b9f}
+.coverage-static-legend .partner-swatch{background:#008984}
+.coverage-logo-backdrop{display:none}
+@media(max-width:720px){.coverage-map-stage{display:block}.coverage-side-brand{position:absolute;z-index:2;left:13px;top:13px;padding:0;width:100px;background:none;pointer-events:none}.coverage-side-brand img{width:100%;filter:drop-shadow(0 1px 4px #ffffffcc)}.coverage-side-brand>span,.coverage-side-rule,.coverage-side-brand>small{display:none}.coverage-map-stage .coverage-static-image{aspect-ratio:710/390}.coverage-map-stage .coverage-static-image>img{width:178.169014%;left:-44.366197%;top:-53.846154%}.coverage-static-panel .coverage-static-legend{gap:10px 16px}}

@@ -236,3 +236,10 @@
 .coverage-map-overlay strong{font-size:17px;line-height:1.4;color:#17233b;background:#fffffff0;padding:10px 15px;border-radius:10px;box-shadow:0 3px 12px #12345612}
 .coverage-map-overlay>img{width:140px;height:auto;background:#fffffff0;padding:8px 10px;border-radius:10px;box-shadow:0 3px 12px #12345612}
 @media(max-width:720px){.coverage-map-overlay{top:10px;left:10px;right:10px;gap:8px}.coverage-map-overlay strong{font-size:11px;padding:7px 9px}.coverage-map-overlay>img{width:95px;padding:5px 7px}}
+
+/* Branding sits within the map background, without floating badges. */
+.coverage-map-stage{background:#fff}
+.coverage-map-watermark{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;pointer-events:none;overflow:hidden}
+.coverage-map-watermark img{width:85%;height:auto;opacity:.18;transform:rotate(-12deg)}
+.coverage-map-stage .coverage-static-image{position:relative;z-index:1;mix-blend-mode:multiply;background:transparent;opacity:.9}
+.coverage-map-stage .coverage-static-image>img{mix-blend-mode:multiply}

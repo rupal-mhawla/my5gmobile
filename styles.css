@@ -229,3 +229,10 @@
 .domestic-swatch{background:#056b9f}.partner-swatch{background:#008984}.none-swatch{background:#fff}
 .coverage-static-panel .coverage-map-help{background:#ffffffb3}
 @media(max-width:720px){.coverage-static-image{height:auto;aspect-ratio:710/340;overflow:hidden}.coverage-static-image img{width:178.169014%;max-width:none;left:-44.366197%;top:-70.588235%}.coverage-static-legend{gap:12px;padding:16px}.coverage-static-legend>span{font-size:11px;gap:5px}.coverage-static-legend i{width:13px;height:13px}}
+
+/* Map title and brand are embedded over the image, without a header strip. */
+.coverage-map-stage{position:relative;isolation:isolate;overflow:hidden}
+.coverage-map-overlay{position:absolute;z-index:2;top:18px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:start;gap:16px;pointer-events:none}
+.coverage-map-overlay strong{font-size:17px;line-height:1.4;color:#17233b;background:#fffffff0;padding:10px 15px;border-radius:10px;box-shadow:0 3px 12px #12345612}
+.coverage-map-overlay>img{width:140px;height:auto;background:#fffffff0;padding:8px 10px;border-radius:10px;box-shadow:0 3px 12px #12345612}
+@media(max-width:720px){.coverage-map-overlay{top:10px;left:10px;right:10px;gap:8px}.coverage-map-overlay strong{font-size:11px;padding:7px 9px}.coverage-map-overlay>img{width:95px;padding:5px 7px}}

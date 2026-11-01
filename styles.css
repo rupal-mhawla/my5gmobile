@@ -213,3 +213,5 @@
 .header nav{gap:20px}
 @media(max-width:1050px) and (min-width:721px){.header nav{gap:12px;font-size:12px}.header .brand{width:155px}.header .button.small{padding:12px 14px;gap:10px;font-size:12px}}
 @media(max-width:720px){.coverage-toolbar{padding:22px;display:block}.coverage-toolbar strong{font-size:19px}.coverage-map-link{margin-top:16px}.coverage-map{height:540px}.coverage-note{font-size:13px}.coverage-map-help{padding:14px 20px}}
+
+.coverage-panel{margin:0}.coverage-static-image{position:relative;overflow:hidden;aspect-ratio:1265/600;background:#aec7ee}.coverage-static-image img{display:block;position:absolute;left:0;top:-14.5%;width:100%;height:auto}.static-map-label{font-size:20px;font-weight:800;background:var(--gradient);background-clip:text;color:transparent}@media(max-width:720px){.coverage-toolbar{display:flex;align-items:center;gap:10px}.coverage-toolbar strong{font-size:16px}.static-map-label{font-size:16px}.coverage-static-image{overflow-x:auto;aspect-ratio:auto;height:400px}.coverage-static-image img{width:843px;max-width:none;top:-58px}}

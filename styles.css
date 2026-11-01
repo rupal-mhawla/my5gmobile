@@ -267,3 +267,15 @@
 .coverage-map-stage .coverage-static-image{background:#acc7f2}
 .coverage-map-stage .coverage-static-image:after{content:'';position:absolute;inset:0 auto 0 0;width:22px;background:linear-gradient(90deg,#acc7f2,rgba(172,199,242,0));pointer-events:none;z-index:2}
 @media(max-width:720px){.coverage-side-brand{background:transparent}.coverage-map-stage .coverage-static-image:after{display:none}}
+
+/* Balanced, readable navigation with an accessible compact-screen layout. */
+.header{display:grid;grid-template-columns:175px minmax(0,1fr) auto;gap:24px;height:auto;min-height:106px;padding-top:18px;padding-bottom:18px}
+.header .brand{width:175px}
+.header nav{display:flex;justify-content:center;align-items:center;gap:clamp(16px,1.7vw,28px);font-size:15px;line-height:1.4;font-weight:600}
+.header nav a{display:flex;align-items:center;min-height:44px;white-space:nowrap;position:relative;padding:8px 0}
+.header nav a:after{content:'';position:absolute;height:2px;bottom:4px;left:0;right:0;border-radius:2px;background:linear-gradient(90deg,#00b7df,#087fcb,#bd0089);transform:scaleX(0);transition:transform .18s}
+.header nav a:hover:after,.header nav a:focus-visible:after{transform:scaleX(1)}
+.header .button.small{font-size:13px;gap:15px;white-space:nowrap;padding:13px 18px}
+@media(max-width:1120px){.header{grid-template-columns:1fr auto;gap:10px 24px;padding-top:16px;padding-bottom:8px}.header nav{grid-column:1/-1;grid-row:2;justify-content:center;gap:30px;font-size:15px}.header>.button{grid-column:2;grid-row:1}}
+@media(max-width:720px){.header{min-height:0;padding-top:14px;padding-bottom:8px;gap:12px}.header .brand{width:145px}.header .button.small{font-size:12px;padding:11px 14px;gap:10px}.header nav{display:flex;justify-content:flex-start;gap:22px;font-size:14px;width:100%;overflow-x:auto;scrollbar-width:thin;padding-bottom:5px}.header nav a{flex-shrink:0;min-height:42px}.header nav a:after{bottom:2px}}
+@media(prefers-reduced-motion:reduce){.header nav a:after{transition:none}}

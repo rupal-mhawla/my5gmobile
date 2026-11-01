@@ -170,3 +170,23 @@
 @media(max-width:720px){#facts-unlimited-plus{grid-column:auto;width:100%}}
 
 .hero-copy h1{font-size:clamp(44px,4.5vw,61px);letter-spacing:-2.5px}.campaign-word{font-size:52px;letter-spacing:-3px}@media(max-width:720px){.hero-copy h1{font-size:clamp(37px,8.6vw,60px);letter-spacing:-1.8px}.campaign-word{font-size:43px}}
+
+/* Readable plan comparison: wider cards and comfortable type sizes. */
+.plan-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 22px;align-items:stretch}
+.plan-card,.plan-card.featured{flex:0 1 calc((100% - 44px)/3);min-width:0;padding:30px 26px 24px}
+.plan-name{font-size:23px;line-height:1.3}
+.plan-tag{font-size:15px;line-height:1.6;min-height:48px;color:#53617a}
+.price{font-size:58px;line-height:1.15;margin:22px 0}
+.price>span{font-size:30px}.price small{font-size:17px}
+.autopay{font-size:16px;line-height:1.6;margin:-7px 0 24px;color:#086aab}
+.data-amount{font-size:32px}.data-amount>span{font-size:22px}
+.data-amount>small{font-size:15px;line-height:1.5;color:#53617a}
+.plan-card li{font-size:16px;line-height:1.65;margin-bottom:13px;gap:10px;color:#39465e}
+.plan-card ul{margin:22px 0 26px}
+.plan-button{font-size:16px;line-height:1.4;min-height:50px;padding:14px 16px}
+.plan-facts-link{font-size:15px;line-height:1.5;padding-top:17px;color:#086aab}
+.card-ribbon{font-size:11px;top:-24px;letter-spacing:1.2px;padding:8px}
+.segmented button{font-size:15px;min-height:44px}.plan-tools>span{font-size:14px}
+.plans-section .plan-disclaimer{font-size:14px;color:#59667d}
+@media(max-width:1050px){.plan-card,.plan-card.featured{flex-basis:calc((100% - 22px)/2)}}
+@media(max-width:720px){.plan-grid{gap:30px}.plan-card,.plan-card.featured{flex-basis:100%;max-width:480px;padding:28px 24px}.plan-grid .plan-card:last-child ul{display:block}.plan-tag{min-height:0}.plan-name{font-size:24px}.plan-tools{align-items:center;flex-wrap:wrap;gap:15px}.plan-tools>span{max-width:none;text-align:left}.segmented button{font-size:14px;padding:10px 14px}}

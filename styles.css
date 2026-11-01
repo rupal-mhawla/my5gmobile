@@ -191,6 +191,7 @@
 @media(max-width:1050px){.plan-card,.plan-card.featured{flex-basis:calc((100% - 22px)/2)}}
 @media(max-width:720px){.plan-grid{gap:30px}.plan-card,.plan-card.featured{flex-basis:100%;max-width:480px;padding:28px 24px}.plan-grid .plan-card:last-child ul{display:block}.plan-tag{min-height:0}.plan-name{font-size:24px}.plan-tools{align-items:center;flex-wrap:wrap;gap:15px}.plan-tools>span{max-width:none;text-align:left}.segmented button{font-size:14px;padding:10px 14px}}
 
+
 /* Keep all five plans together without shrinking readable text. */
 .plans-section.wrap{max-width:1680px}
 .plan-grid{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:18px;overflow-x:auto;padding:28px 3px 18px;margin-top:-28px;scroll-snap-type:x proximity}
@@ -198,6 +199,7 @@
 .plan-name{font-size:22px}.plan-tag{min-height:48px}
 .plan-grid .plan-card:last-child ul{display:block}
 @media(max-width:720px){.plan-grid{gap:16px}.plan-card,.plan-card.featured{flex:0 0 86%;min-width:270px;max-width:none;padding:28px 24px}.plan-tag{min-height:48px}}
+
 
 /* Official network coverage, placed before plan selection. */
 .coverage-section{padding-bottom:55px}
@@ -230,6 +232,7 @@
 .coverage-static-panel .coverage-map-help{background:#ffffffb3}
 @media(max-width:720px){.coverage-static-image{height:auto;aspect-ratio:710/340;overflow:hidden}.coverage-static-image img{width:178.169014%;max-width:none;left:-44.366197%;top:-70.588235%}.coverage-static-legend{gap:12px;padding:16px}.coverage-static-legend>span{font-size:11px;gap:5px}.coverage-static-legend i{width:13px;height:13px}}
 
+
 /* Map title and brand are embedded over the image, without a header strip. */
 .coverage-map-stage{position:relative;isolation:isolate;overflow:hidden}
 .coverage-map-overlay{position:absolute;z-index:2;top:18px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:start;gap:16px;pointer-events:none}
@@ -237,12 +240,14 @@
 .coverage-map-overlay>img{width:140px;height:auto;background:#fffffff0;padding:8px 10px;border-radius:10px;box-shadow:0 3px 12px #12345612}
 @media(max-width:720px){.coverage-map-overlay{top:10px;left:10px;right:10px;gap:8px}.coverage-map-overlay strong{font-size:11px;padding:7px 9px}.coverage-map-overlay>img{width:95px;padding:5px 7px}}
 
+
 /* Branding sits within the map background, without floating badges. */
 .coverage-map-stage{background:#fff}
 .coverage-map-watermark{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;pointer-events:none;overflow:hidden}
 .coverage-map-watermark img{width:85%;height:auto;opacity:.18;transform:rotate(-12deg)}
 .coverage-map-stage .coverage-static-image{position:relative;z-index:1;mix-blend-mode:multiply;background:transparent;opacity:.9}
 .coverage-map-stage .coverage-static-image>img{mix-blend-mode:multiply}
+
 
 /* Wide coverage composition with branding in the open side area. */
 #coverage.wrap{max-width:1680px}
@@ -261,12 +266,21 @@
 .coverage-logo-backdrop{display:none}
 @media(max-width:720px){.coverage-map-stage{display:block}.coverage-side-brand{position:absolute;z-index:2;left:13px;top:13px;padding:0;width:100px;background:none;pointer-events:none}.coverage-side-brand img{width:100%;filter:drop-shadow(0 1px 4px #ffffffcc)}.coverage-side-brand>span,.coverage-side-rule,.coverage-side-brand>small{display:none}.coverage-map-stage .coverage-static-image{aspect-ratio:710/390}.coverage-map-stage .coverage-static-image>img{width:178.169014%;left:-44.366197%;top:-53.846154%}.coverage-static-panel .coverage-static-legend{gap:10px 16px}}
 
+
+/* Seamless ocean background between the logo and coverage artwork. */
+.coverage-map-stage,.coverage-side-brand{background:#adc6ed}
+.coverage-side-brand{padding-right:10px}
+.coverage-map-stage .coverage-static-image{background:#adc6ed}
+.coverage-map-stage .coverage-static-image:after{content:'';position:absolute;inset:0 auto 0 0;width:22px;background:linear-gradient(90deg,#adc6ed,rgba(173,198,237,0));pointer-events:none;z-index:2}
+@media(max-width:720px){.coverage-side-brand{background:transparent}.coverage-map-stage .coverage-static-image:after{display:none}}
+
 /* Seamless ocean background between the logo and coverage artwork. */
 .coverage-map-stage,.coverage-side-brand{background:#acc7f2}
 .coverage-side-brand{padding-right:10px}
 .coverage-map-stage .coverage-static-image{background:#acc7f2}
 .coverage-map-stage .coverage-static-image:after{content:'';position:absolute;inset:0 auto 0 0;width:22px;background:linear-gradient(90deg,#acc7f2,rgba(172,199,242,0));pointer-events:none;z-index:2}
 @media(max-width:720px){.coverage-side-brand{background:transparent}.coverage-map-stage .coverage-static-image:after{display:none}}
+
 
 /* Balanced, readable navigation with an accessible compact-screen layout. */
 .header{display:grid;grid-template-columns:175px minmax(0,1fr) auto;gap:24px;height:auto;min-height:106px;padding-top:18px;padding-bottom:18px}
@@ -279,3 +293,31 @@
 @media(max-width:1120px){.header{grid-template-columns:1fr auto;gap:10px 24px;padding-top:16px;padding-bottom:8px}.header nav{grid-column:1/-1;grid-row:2;justify-content:center;gap:30px;font-size:15px}.header>.button{grid-column:2;grid-row:1}}
 @media(max-width:720px){.header{min-height:0;padding-top:14px;padding-bottom:8px;gap:12px}.header .brand{width:145px}.header .button.small{font-size:12px;padding:11px 14px;gap:10px}.header nav{display:flex;justify-content:flex-start;gap:22px;font-size:14px;width:100%;overflow-x:auto;scrollbar-width:thin;padding-bottom:5px}.header nav a{flex-shrink:0;min-height:42px}.header nav a:after{bottom:2px}}
 @media(prefers-reduced-motion:reduce){.header nav a:after{transition:none}}
+
+
+.preview-banner{display:flex;justify-content:center;align-items:center;gap:22px;padding:12px 20px;background:#fff6dc;color:#634c11;font-size:12px;font-weight:800;letter-spacing:1px}.preview-banner span{font-weight:400;letter-spacing:0}.preview-banner a{letter-spacing:0;text-decoration:underline}
+.comparison-preview{padding-top:0;padding-bottom:65px}.compare-disclosure{border:1px solid #dce5f0;border-radius:20px;overflow:hidden;box-shadow:0 12px 36px #183b6507}.compare-disclosure>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:25px;background:linear-gradient(115deg,#effaff,#faf4fc);padding:28px 30px}.compare-disclosure>summary::-webkit-details-marker{display:none}.compare-disclosure .eyebrow{margin:0 0 12px}.compare-disclosure h2{font-size:29px}.compare-toggle{font-size:30px;color:#087fcb}.compare-disclosure[open] .compare-toggle{font-size:0}.compare-disclosure[open] .compare-toggle:after{content:'−';font-size:30px}.compare-intro{margin:25px 30px;font-size:15px;color:#5e6d83}.compare-scroll{overflow-x:auto;padding:0 25px}.compare-scroll table{width:100%;border-collapse:collapse;min-width:950px;text-align:left;font-size:14px}.compare-scroll th,.compare-scroll td{padding:20px 15px;border-bottom:1px solid #e2e8f1;line-height:1.6}.compare-scroll th[scope=row]{width:230px;color:#41516a;font-size:13px}.compare-scroll thead th{font-size:16px;white-space:nowrap}.compare-scroll td{color:#394963}.compare-scroll td a{color:#087fcb;font-weight:700;text-decoration:underline}.compare-highlight{background:#edf8ff}.compare-price td{font-size:29px;font-weight:800;color:#15233d;letter-spacing:-1px}.compare-price td>span{display:block;font-size:11px;font-weight:400;letter-spacing:0;color:#6c7a91}.compare-footnote{font-size:12px;color:#67768a;line-height:1.8;padding:8px 30px 22px;margin-bottom:0}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.coverage-feature-preview{display:grid;grid-template-columns:1.05fr 1fr;border-radius:24px;overflow:hidden;background:linear-gradient(125deg,#007eaf,#166fc3 50%,#9e198e);margin:0 0 40px;box-shadow:0 20px 55px #1266ad18}.coverage-feature-art{position:relative;min-height:445px;background:radial-gradient(ellipse at 45% 45%,#f4fdff,#e0f3ff);isolation:isolate;overflow:hidden;display:flex;align-items:center;justify-content:center}.coverage-feature-art svg{width:105%;filter:drop-shadow(0 18px 15px #1c5b9b30);position:relative;z-index:1}.map-art-orbit{position:absolute;width:370px;height:370px;border:1px solid #c5e4f6;border-radius:50%;transform:rotate(-25deg) scaleY(.6)}.map-art-brand{position:absolute;left:30px;bottom:48px;width:145px}.map-art-brand img{width:100%;height:auto;mix-blend-mode:multiply}.map-art-caption{position:absolute;bottom:19px;left:30px;font-size:10px;color:#667e99}.coverage-feature-copy{padding:50px 42px;color:white}.coverage-feature-copy .eyebrow{color:#aeefff;font-size:9px}.coverage-feature-copy h3{font-size:38px;line-height:1.15;letter-spacing:-1.5px;margin:0 0 23px}.coverage-feature-copy>p:not(.eyebrow){color:#e0efff;font-size:15px;line-height:1.8}.coverage-feature-copy ul{list-style:none;padding:0;margin:25px 0 30px}.coverage-feature-copy li{display:flex;gap:10px;margin-bottom:13px;font-size:14px;line-height:1.6;color:#eef8ff}.coverage-feature-copy li:before{content:'✓';color:#9feaff}.coverage-feature-copy .button{font-size:13px}.coverage-feature-preview+.coverage-panel{margin-top:0}
+@media(max-width:850px){.coverage-feature-preview{grid-template-columns:1fr}.coverage-feature-art{min-height:330px;max-height:380px}.coverage-feature-art svg{width:80%}.coverage-feature-copy{padding:35px}.coverage-feature-copy h3{font-size:34px}.map-art-brand{bottom:42px;width:130px}}
+@media(max-width:720px){.preview-banner{gap:8px;flex-wrap:wrap;font-size:10px}.compare-disclosure>summary{padding:24px 20px}.compare-disclosure h2{font-size:25px}.compare-intro{margin:20px;font-size:14px}.compare-scroll{padding:0 12px}.compare-footnote{padding:8px 20px 22px}.coverage-feature-art{min-height:300px}.coverage-feature-art svg{width:105%}.coverage-feature-copy{padding:30px 25px}.coverage-feature-copy h3{font-size:32px}.map-art-brand{width:115px;left:20px}.map-art-caption{left:20px;font-size:9px}}
+
+/* Place the real coverage overview inside the feature's visual area. */
+.coverage-feature-preview{grid-template-columns:1.35fr 1fr}
+.coverage-feature-art.coverage-feature-real-map{display:flex;align-items:center;justify-content:center;padding:20px;background:#acc7f2;min-height:440px;max-height:none}
+.coverage-feature-real-map .coverage-panel{width:100%;border:0;border-radius:14px;box-shadow:none;overflow:hidden}
+.coverage-feature-real-map .coverage-map-stage{grid-template-columns:18% 82%}
+.coverage-feature-real-map .coverage-side-brand{padding:15px 8px 15px 12px}
+.coverage-feature-real-map .coverage-side-brand img{width:100%;filter:none}
+.coverage-feature-real-map .coverage-static-legend{padding:13px 9px;gap:10px;font-size:10px}
+.coverage-feature-real-map .coverage-static-legend>span{font-size:10px;gap:5px}
+.coverage-feature-real-map .coverage-static-legend i{width:12px;height:12px}
+@media(max-width:1050px){.coverage-feature-preview{grid-template-columns:1fr}.coverage-feature-art.coverage-feature-real-map{min-height:0;padding:20px}}
+@media(max-width:720px){.coverage-feature-art.coverage-feature-real-map{padding:0;min-height:0}.coverage-feature-real-map .coverage-panel{border-radius:0}.coverage-feature-real-map .coverage-map-stage{display:grid;grid-template-columns:20% 80%}.coverage-feature-real-map .coverage-side-brand{position:relative;left:auto;top:auto;width:auto;padding:10px;z-index:auto;pointer-events:none;background:#acc7f2}.coverage-feature-real-map .coverage-side-brand img{width:100%}.coverage-feature-real-map .coverage-static-image{aspect-ratio:710/340}.coverage-feature-real-map .coverage-static-image>img{width:178.169014%;left:-44.366197%;top:-70.588235%}.coverage-feature-real-map .coverage-static-legend{gap:8px;padding:13px 6px}.coverage-feature-real-map .coverage-static-legend>span{font-size:9px}}
+
+/* Equal halves for the coverage map and feature copy. */
+.coverage-feature-preview{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.coverage-feature-art.coverage-feature-real-map{min-height:440px;padding:16px}
+@media(min-width:721px){.coverage-feature-preview{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.coverage-feature-art.coverage-feature-real-map{min-width:0;min-height:440px}.coverage-feature-copy{padding:38px 28px}.coverage-feature-copy h3{font-size:32px}.coverage-feature-real-map .coverage-static-legend{gap:8px}.coverage-feature-real-map .coverage-static-legend>span{font-size:9px}}
+@media(max-width:720px){.coverage-feature-preview{grid-template-columns:1fr}.coverage-feature-art.coverage-feature-real-map{min-height:0;padding:0}}
+
+.labeled-us-art{background:radial-gradient(ellipse at 50% 40%,#f7fdff,#dff5ff);min-height:440px;padding:20px;position:relative}.state-map-object{display:block;width:110%;height:320px;position:relative;z-index:1;transform:rotate(-6deg)}.labeled-us-art .map-art-brand{width:125px;left:22px;bottom:46px}.labeled-us-art .map-art-caption{left:22px;font-size:9px;right:12px}.state-name-directory{margin:20px 0;color:#52657d;border:1px solid #dce6f1;border-radius:12px;padding:17px 22px}.state-name-directory summary{cursor:pointer;font-size:14px;font-weight:700}.state-name-directory ul{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 20px;padding:20px 0 0;list-style:none;font-size:13px}.state-name-directory b{display:inline-block;width:26px;color:#087fcb}@media(max-width:720px){.labeled-us-art{min-height:350px;padding:14px}.state-map-object{height:260px;width:100%}.state-name-directory ul{grid-template-columns:repeat(2,1fr)}}

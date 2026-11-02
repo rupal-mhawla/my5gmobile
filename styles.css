@@ -340,3 +340,6 @@
 @media(max-width:1000px){.country-flag-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media(max-width:720px){.country-flag-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}.country-flag-card{font-size:10px;min-height:39px;padding:6px;gap:5px}.country-flag-card img{width:20px;height:14px}}
 @media(max-width:480px){.country-flag-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.country-flag-card{font-size:10px;padding:6px 5px}}
+
+.ild-category-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.ild-category-tabs button{border:1px solid #cbdbea;background:#fff;color:#18213e;padding:12px 22px;border-radius:12px;font:inherit;font-weight:700;cursor:pointer}.ild-category-tabs button[aria-pressed="true"]{background:linear-gradient(110deg,#00afd0,#157bcc,#a80094);color:white;border-color:transparent}.ild-category-tabs button:focus-visible{outline:3px solid #0089c9;outline-offset:3px}
+

@@ -1,9 +1,9 @@
 const plans = [
-  {name:'Starter',price:10,autopay:18,data:1,tag:'1GB for light data use',features:['Unlimited Talk & Text','1GB of high-speed data','Perfect for light data use','Flexible, affordable add-ons']},
-  {name:'Explore',price:20,autopay:27,data:5,tag:'5GB for everyday use',features:['Unlimited Talk & Text','5GB of high-speed data','Flexible, affordable add-ons','Free roaming in Mexico & Canada']},
-  {name:'Premium',price:30,autopay:38,data:12,tag:'12GB for streaming and more',featured:true,features:['Unlimited Talk & Text','12GB of high-speed data','Calling to 100+ international destinations','Free roaming in Mexico & Canada']},
-  {name:'Unlimited',price:40,autopay:46,data:30,tag:'30GB for heavier data use',features:['Unlimited data','30GB of high-speed data','Calling to 100+ international destinations','Free roaming in Mexico & Canada']},
-  {name:'Unlimited Plus',price:50,data:50,tag:'50GB for your busiest days',features:['Unlimited data','Unlimited Talk & Text','Calling to 100+ international destinations','Free roaming in Mexico & Canada']}
+  {name:'Starter',price:10,data:1,tag:'1GB for light data use',features:['Unlimited Talk & Text','1GB of high-speed data','Perfect for light data use','Flexible, affordable add-ons']},
+  {name:'Explore',price:20,autopay:18,data:5,tag:'5GB for everyday use',features:['Unlimited Talk & Text','5GB of high-speed data','Flexible, affordable add-ons','Free roaming in Mexico & Canada']},
+  {name:'Premium',price:30,autopay:27,data:12,tag:'12GB for streaming and more',featured:true,features:['Unlimited Talk & Text','12GB of high-speed data','Calling to 100+ international destinations','Free roaming in Mexico & Canada']},
+  {name:'Unlimited',price:40,autopay:38,data:30,tag:'30GB for heavier data use',features:['Unlimited data','30GB of high-speed data','Calling to 100+ international destinations','Free roaming in Mexico & Canada']},
+  {name:'Unlimited Plus',price:50,autopay:46,data:50,tag:'50GB for your busiest days',features:['Unlimited data','Unlimited Talk & Text','Calling to 100+ international destinations','Free roaming in Mexico & Canada']}
 ];
 const grid = document.querySelector('#plan-grid');
 const dialog = document.querySelector('#plan-dialog');

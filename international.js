@@ -48,15 +48,32 @@ viewTabs.forEach((tab, index) => {
  tab.addEventListener('click', () => showCallingView(index));
  tab.addEventListener('keydown', event => { if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) { event.preventDefault(); showCallingView(event.key === 'Home' ? 0 : event.key === 'End' ? 1 : 1 - index, true); } });
 });
-fetch('assets/international-countries.json').then(r => { if(!r.ok) throw new Error('Load failed'); return r.json(); }).then(countries => {
- const grid = document.querySelector('#country-flag-grid');
- countries.filter(country => country.unlimited).forEach(country => {
-  const card = document.createElement('button'); card.className = 'country-flag-card'; card.type = 'button'; card.setAttribute('aria-label', `See calling allowances for ${country.name}`);
-  const img = document.createElement('img'); img.src = `https://flagcdn.com/w80/${country.code}.png`; img.alt = ''; img.loading = 'lazy'; img.width = 40; img.height = 28;
-  const name = document.createElement('span'); name.textContent = country.name;
-  const arrow = document.createElement('span'); arrow.className = 'country-card-arrow'; arrow.textContent = '↗'; arrow.setAttribute('aria-hidden', 'true');
-  card.append(img, name, arrow);
-  card.addEventListener('click', () => { showCallingView(1); ildSearch.value = country.name; ildAllowance.value = 'all'; ildType.value = 'all'; ildPage = 0; ildRender(); ildSearch.focus({preventScroll:true}); document.querySelector('.ild-tabs').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'}); });
+let callingCategory = 'mobile', callingCountries = [];
+function matchesCategory(row) {
+ return callingCategory === 'limited' ? row.minutes !== 'Unlimited' : row.minutes === 'Unlimited' && ildRouteType(row) === callingCategory;
+}
+function countryMatches(country, row) {
+ const base = country.name === 'Netherlands Antilles - Curacao' ? country.name : country.name;
+ return row.route === base || row.route.startsWith(base + ' - ');
+}
+function renderCountryCategory() {
+ const grid = document.querySelector('#country-flag-grid'); grid.replaceChildren();
+ const title = {landline:'Unlimited Landline',mobile:'Unlimited Mobile to Mobile',limited:'Limited Minutes'}[callingCategory];
+ document.querySelector('.country-grid-heading h3').textContent = title;
+ document.querySelector('.country-grid-heading p').textContent = callingCategory === 'limited' ? 'Routes with a set minute allowance. Select a destination to see landline and mobile routes listed separately with their exact minutes.' : callingCategory === 'mobile' ? 'Unlimited calls to selected mobile networks. Choose a destination to check which networks are included.' : 'Unlimited calls to selected landline numbers. Choose a destination to check the included routes.';
+ callingCountries.filter(country => ildData.some(row => countryMatches(country,row) && matchesCategory(row))).forEach(country => {
+  const card = document.createElement('button'); card.className = 'country-flag-card'; card.type = 'button';
+  card.setAttribute('aria-label', `${title}: ${country.name}`);
+  if(country.code) { const img = document.createElement('img'); img.src = `https://flagcdn.com/w80/${country.code}.png`; img.alt = ''; img.loading = 'lazy'; img.width = 40; img.height = 28; card.append(img); }
+  const name = document.createElement('span'); name.textContent = country.name; card.append(name);
+  card.addEventListener('click', () => { showCallingView(1); ildSearch.value = country.name; ildAllowance.value = callingCategory === 'limited' ? 'limited' : 'unlimited'; ildType.value = callingCategory === 'limited' ? 'all' : callingCategory; ildPage = 0; ildRender(); });
   grid.append(card);
  });
-}).catch(() => { document.querySelector('#country-flag-grid').textContent = 'The country list could not load. Open Calling Details to search.'; });
+}
+document.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => {
+ callingCategory = button.dataset.category;
+ document.querySelectorAll('[data-category]').forEach(b => b.setAttribute('aria-pressed',String(b === button)));
+ renderCountryCategory();
+}));
+Promise.all([fetch('assets/international-countries.json').then(r=>r.json()),fetch('assets/international-routes.json').then(r=>r.json())]).then(([countries,routes])=>{ callingCountries=countries; ildData=routes; renderCountryCategory(); }).catch(()=>{document.querySelector('#country-flag-grid').textContent='The country list could not load. Please refresh.';});
+

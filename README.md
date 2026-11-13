@@ -9,7 +9,7 @@ Run `php -S 127.0.0.1:8081` from this folder, then open http://127.0.0.1:8081/. 
 ## Editing
 
 - index.html: homepage copy, navigation and Broadband Facts.
-- script.js: plan prices, Auto Pay amounts, filters and plan selection.
+- script.js: plan prices, filters and plan selection.
 - styles.css: brand colors, responsive layout and presentation.
 - assets/: supplied logo and embedded destination list.
 

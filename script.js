@@ -13,7 +13,7 @@ function renderPlans(filter='all') {
   plans.filter(p=>filter==='all'||(filter==='light'?p.data<=5:p.data>5)).forEach(p=>{
     const card=document.createElement('article');
     card.className=`plan-card${p.featured?' featured':''}`;
-    card.innerHTML=`${p.featured?'<div class="card-ribbon">THE MIDDLE GROUND</div>':''}<p class="plan-name">${p.name}</p><p class="plan-tag">${p.tag}</p><p class="price"><span>$</span>${p.price}<small>/mo</small></p><div class="data-amount">${p.data}<span>GB</span><small>${p.data===50?'listed data allowance':'high-speed data'}</small></div><ul>${p.features.map(f=>`<li><span aria-hidden="true">✓</span>${f}</li>`).join('')}<li><span aria-hidden="true">✓</span>Hotspot included</li></ul><button class="plan-button" aria-label="Select ${p.name} plan">Choose ${p.name}<span aria-hidden="true">↗</span></button>`;
+    card.innerHTML=`${p.featured?'<div class="card-ribbon">THE MIDDLE GROUND</div>':''}<p class="plan-name">${p.name}</p><p class="plan-tag">${p.tag}</p><p class="price"><span>$</span>${p.price}<small>/mo</small></p><div class="isp-commission"><strong>Earn $${p.price * 0.10}/month per line</strong><span>10% ISP commission</span></div><div class="data-amount">${p.data}<span>GB</span><small>${p.data===50?'listed data allowance':'high-speed data'}</small></div><ul>${p.features.map(f=>`<li><span aria-hidden="true">✓</span>${f}</li>`).join('')}<li><span aria-hidden="true">✓</span>Hotspot included</li></ul><button class="plan-button" aria-label="Select ${p.name} plan">Choose ${p.name}<span aria-hidden="true">↗</span></button>`;
     card.querySelector('button').addEventListener('click',()=>{
       selection=p;
       document.querySelector('#dialog-title').textContent=`${p.name} · $${p.price}/month`;

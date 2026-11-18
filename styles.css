@@ -343,3 +343,5 @@
 
 .ild-category-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.ild-category-tabs button{border:1px solid #cbdbea;background:#fff;color:#18213e;padding:12px 22px;border-radius:12px;font:inherit;font-weight:700;cursor:pointer}.ild-category-tabs button[aria-pressed="true"]{background:linear-gradient(110deg,#00afd0,#157bcc,#a80094);color:white;border-color:transparent}.ild-category-tabs button:focus-visible{outline:3px solid #0089c9;outline-offset:3px}
 
+
+.isp-commission{padding:14px 12px;margin:-8px 0 24px;background:linear-gradient(115deg,#e4f8fc,#f5ebf8);border-left:3px solid #00aed0;border-radius:8px;display:grid;gap:4px}.isp-commission strong{font-size:20px;line-height:1.3;color:#087bb7}.isp-commission span{font-size:14px;color:#475773;line-height:1.4}
